@@ -1,0 +1,15 @@
+{
+    "id": "{36FA4FAD-A175-82D3-3380-9AF0F3892F76}",
+    "name": "Fernbedienung",
+    "type": 3,
+    "vendor": "Ulrich Bittner",
+    "aliases": 
+    [
+        "Fernbedienung"
+    ],
+    "url": "https://github.com/ubittner/Fernbedienung/tree/main/Fernbedienung",
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "UBFB"
+}
