@@ -323,6 +323,7 @@ class Fernbedienung extends IPSModule
                             'caption' => 'Variable',
                             'width'   => '350px',
                             'add'     => 0,
+                            'onClick' => self::MODULE_PREFIX . '_EnableConfigurationButton($id, $TriggerVariables["TargetVariableID"], "TriggerVariableConfigurationButton", 0);',
                             'edit'    => [
                                 'type' => 'SelectVariable'
                             ]
@@ -332,6 +333,8 @@ class Fernbedienung extends IPSModule
                             'caption' => 'Skript',
                             'width'   => '350px',
                             'add'     => 0,
+                            'onClick' => self::MODULE_PREFIX . '_EnableConfigurationButton($id, $TriggerVariables["TargetScriptID"], "TriggerVariableConfigurationButton", 0);',
+
                             'edit'    => [
                                 'type' => 'SelectScript'
                             ]
