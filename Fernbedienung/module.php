@@ -22,10 +22,10 @@ class Fernbedienung extends IPSModule
     use FB_triggerVariable;
 
     // Constants
+    private const LIBRARY_GUID = '{924B189A-9CA5-DDA4-2BA2-AFE1667C4DA1}';
     private const MODULE_NAME = 'Fernbedienung';
     private const MODULE_PREFIX = 'UBFB';
     private const ALARMPROTOCOL_MODULE_GUID = '{33EF9DF1-C8D7-01E7-F168-0A1927F1C61F}';
-    private const ALARMPROTOCOL_PREFIX = 'AP';
 
     public function Create()
     {
@@ -474,6 +474,9 @@ class Fernbedienung extends IPSModule
 
         #################### Status
 
+        $library = IPS_GetLibrary(self::LIBRARY_GUID);
+        $version = '[Version ' . $library['Version'] . '-' . $library['Build'] . ' vom ' . date('d.m.Y', $library['Date']) . ']';
+
         $form['status'] = [
             [
                 'code'    => 101,
@@ -483,22 +486,22 @@ class Fernbedienung extends IPSModule
             [
                 'code'    => 102,
                 'icon'    => 'active',
-                'caption' => self::MODULE_NAME . ' ist aktiv (ID ' . $this->InstanceID . ')',
+                'caption' => self::MODULE_NAME . ' ist aktiv (ID ' . $this->InstanceID . ') ' . $version,
             ],
             [
                 'code'    => 103,
                 'icon'    => 'active',
-                'caption' => self::MODULE_NAME . ' wird gelöscht (ID ' . $this->InstanceID . ')',
+                'caption' => self::MODULE_NAME . ' wird gelöscht (ID ' . $this->InstanceID . ') ' . $version,
             ],
             [
                 'code'    => 104,
                 'icon'    => 'inactive',
-                'caption' => self::MODULE_NAME . ' ist inaktiv (ID ' . $this->InstanceID . ')',
+                'caption' => self::MODULE_NAME . ' ist inaktiv (ID ' . $this->InstanceID . ') ' . $version,
             ],
             [
                 'code'    => 200,
                 'icon'    => 'inactive',
-                'caption' => self::MODULE_NAME . ', es ist Fehler aufgetreten, weitere Informationen unter Meldungen, im Log oder Debug! (ID ' . $this->InstanceID . ')',
+                'caption' => 'Es ist Fehler aufgetreten, weitere Informationen unter Meldungen, im Log oder Debug! (ID ' . $this->InstanceID . ') ' . $version
             ]
         ];
         return json_encode($form);

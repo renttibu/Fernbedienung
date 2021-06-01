@@ -24,7 +24,7 @@ trait FB_alarmProtocol
             $timestamp = date('d.m.Y, H:i:s');
             $logText = $timestamp . ', ' . $Message;
             $this->SendDebug(__FUNCTION__, $logText, 0);
-            self::ALARMPROTOCOL_PREFIX . _UpdateMessages($id, $logText, 0);
+            AP_UpdateMessages($id, $logText, 0);
             $this->SendDebug(__FUNCTION__, 'Das Alarmprotokoll wurde aktualisiert.', 0);
         }
     }
