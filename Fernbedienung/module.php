@@ -20,10 +20,12 @@ class Fernbedienung extends IPSModule
     use FB_alarmProtocol;
     use FB_backupRestore;
     use FB_triggerVariable;
+
     // Constants
     private const MODULE_NAME = 'Fernbedienung';
     private const MODULE_PREFIX = 'UBFB';
     private const ALARMPROTOCOL_MODULE_GUID = '{33EF9DF1-C8D7-01E7-F168-0A1927F1C61F}';
+    private const ALARMPROTOCOL_PREFIX = 'AP';
 
     public function Create()
     {
@@ -31,14 +33,8 @@ class Fernbedienung extends IPSModule
         parent::Create();
 
         // Properties
-
-        // Functions
         $this->RegisterPropertyBoolean('MaintenanceMode', false);
-
-        // Trigger variables
         $this->RegisterPropertyString('TriggerVariables', '[]');
-
-        // Alarm protocol
         $this->RegisterPropertyInteger('AlarmProtocol', 0);
     }
 

@@ -8,6 +8,7 @@
  */
 
 /** @noinspection PhpUnusedPrivateMethodInspection */
+/** @noinspection PhpUndefinedFunctionInspection */
 
 declare(strict_types=1);
 
@@ -22,9 +23,8 @@ trait FB_alarmProtocol
         if ($id != 0 && @IPS_ObjectExists($id)) {
             $timestamp = date('d.m.Y, H:i:s');
             $logText = $timestamp . ', ' . $Message;
-            $logType = 0; # event
-            $protocol = 'AP_UpdateMessages(' . $id . ', "' . $logText . '", ' . $logType . ');';
-            @IPS_RunScriptText($protocol);
+            $this->SendDebug(__FUNCTION__, $logText, 0);
+            self::ALARMPROTOCOL_PREFIX . _UpdateMessages($id, $logText, 0);
             $this->SendDebug(__FUNCTION__, 'Das Alarmprotokoll wurde aktualisiert.', 0);
         }
     }
