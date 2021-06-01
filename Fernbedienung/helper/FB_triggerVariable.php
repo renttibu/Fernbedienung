@@ -24,7 +24,7 @@ trait FB_triggerVariable
             $keys = array_keys(array_column($triggerVariables, 'ID'), $VariableID);
             foreach ($keys as $key) {
                 if (!$triggerVariables[$key]['Use']) {
-                    return;
+                    continue;
                 }
                 $triggered = false;
                 $type = IPS_GetVariable($VariableID)['VariableType'];
