@@ -3,6 +3,9 @@
     "author": "Ulrich Bittner",
     "name": "Fernbedienung",
     "url": "https://github.com/ubittner/Fernbedienung",
+    "compatibility": {
+        "version": "5.5"
+    },
     "version": "1.0",
     "build": 3,
     "date": 1622519825
