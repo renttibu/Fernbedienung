@@ -300,7 +300,7 @@ trait FB_triggerVariable
                             break;
 
                         case 2: # toggle variable
-                            $this->SendDebug(__FUNCTION__, 'Sender ID ' . $triggerVariables[$key]['ID'] . ', Aktion: Variable einschalten wird ausgeführt.', 0);
+                            $this->SendDebug(__FUNCTION__, 'Sender ID ' . $triggerVariables[$key]['ID'] . ', Aktion: Variable umschalten wird ausgeführt.', 0);
                             $id = $triggerVariables[$key]['TargetVariableID'];
                             $actualStatus = boolval(GetValue($id));
                             if ($id != 0 && @IPS_ObjectExists($id)) {
