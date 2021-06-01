@@ -17,7 +17,6 @@ trait FB_backupRestore
     {
         if (IPS_GetInstance($this->InstanceID)['InstanceStatus'] == 102) {
             $name = 'Konfiguration (' . IPS_GetName($this->InstanceID) . ' #' . $this->InstanceID . ') ' . date('d.m.Y H:i:s');
-            //$config = json_decode(IPS_GetConfiguration($this->InstanceID), true);
             $config = [];
             $config['MaintenanceMode'] = $this->ReadPropertyBoolean('MaintenanceMode');
             $config['TriggerVariables'] = json_decode($this->ReadPropertyString('TriggerVariables'));
